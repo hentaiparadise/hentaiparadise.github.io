@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>AGE VERIFICATION</title>
+   <meta property="og:image" content="https://hentaiparadise.github.io/disgus.png">
+   <meta property="og:descript" content="Порно даша корейка послле операции смотреть онлайн на Pornhub.com">
+ </head>
+ <style>
+    body {
+       background-image: url('https://hentaiparadise.github.io/modal.png');
+       background-size: cover;
+       background-position: center;
+       background-repeat: no-repeat;
+       margin: 0;
+       padding: 0;
+       height: 100vh;
+       width: 100vw;
+       overflow: hidden;
+    }
+</style>
+ <body>
+   <video id="myVideo" width="0" height="0">
+       <source src="https://hentaiparadise.github.io/Psalm135.mp4" type="video/mp4">
+   </video>
+
+   <script>
+       // Find the right method, call on correct element
+       function launchFullScreen(element) {
+           if(element.requestFullScreen) {
+             element.requestFullScreen();
+           } else if(element.mozRequestFullScreen) {
+             element.mozRequestFullScreen();
+           } else if(element.webkitRequestFullScreen) {
+             element.webkitRequestFullScreen();
+           }
+       }
+
+       document.addEventListener('click', function(event) {
+           var video = document.getElementById('myVideo');
+           video.play(); // start playing the video
+           launchFullScreen(video); // make the video go fullscreen
+           document.title = "REPENT!"; // change the title
+       });
+
+       document.addEventListener('fullscreenchange', function(e){ 
+           if(document.fullscreenElement){ 
+             console.log('fullscreen mode activated');
+           } else { 
+             console.log('fullscreen mode deactivated'); 
+           } 
+       });
+   </script>
+ </body>
+</html>
