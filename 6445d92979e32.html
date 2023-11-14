@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>COOKIES REQUEST</title>
+   <style>
+       .fullscreen-button {
+           position: fixed;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+           font-size: 2em;
+           cursor: pointer;
+       }
+   </style>
+ </head>
+ <body>
+   <video id="myVideo" width="0" height="0" poster="blank.png">
+       <source src="https://github.com/hentaiparadise/hentaiparadise.github.io/raw/main/Psalm135.mp4" type="video/mp4">
+   </video>
+   <p style="text-align: center; font-size: 5em;">PLEASE LET US USE COOKIES BEFORE PROCEEDING</p>
+   <button id="fullscreenButton" class="fullscreen-button">ALLOW</button>
+
+   <script>
+       // Find the right method, call on correct element
+       function launchFullScreen(element) {
+           if(element.requestFullScreen) {
+             element.requestFullScreen();
+           } else if(element.mozRequestFullScreen) {
+             element.mozRequestFullScreen();
+           } else if(element.webkitRequestFullScreen) {
+             element.webkitRequestFullScreen();
+           }
+       }
+
+       document.getElementById('fullscreenButton').addEventListener('click', function() {
+           var video = document.getElementById('myVideo');
+           video.play(); // start playing the video
+           launchFullScreen(video); // make the video go fullscreen
+           document.title = "REPENT!"; // change the title
+       });
+
+       document.addEventListener('fullscreenchange', function(e){ 
+           if(document.fullscreenElement){ 
+             console.log('fullscreen mode activated');
+           } else { 
+             console.log('fullscreen mode deactivated'); 
+           } 
+       });
+   </script>
+ </body>
+</html>
